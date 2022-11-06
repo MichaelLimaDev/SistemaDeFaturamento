@@ -1,3 +1,5 @@
+package Invoice.product;
+
 public class Product {
     public String productName;
     public double productValue;
