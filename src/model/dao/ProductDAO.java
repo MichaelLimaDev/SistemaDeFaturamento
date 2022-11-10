@@ -26,7 +26,26 @@ public class ProductDAO extends ConnectionDAO {
         return result;
     }
 
-    public void updateProductDatabase(int id, String productName, double productValue, int productQuantity) {
+    public boolean updateProductDatabase(int id, String newProductName, double newProductValue, int newProductQuantity) {
+        boolean result;
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(
+                    "update products productName = ?, productValue = ?, productQuantity where id = ?");
+
+            statement.setString(1, newProductName);
+            statement.setDouble(2, newProductValue);
+            statement.setInt(3, newProductQuantity);
+            statement.setInt(4, id);
+
+            result = statement.executeUpdate() == 1;
+
+        } catch (SQLException err) {
+            err.printStackTrace();
+            result = false;
+        }
+
+        return result;
     }
 
     public boolean deleteProductDatabase(int idProduct) {
