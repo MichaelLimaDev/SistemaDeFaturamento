@@ -2,8 +2,11 @@ package model.dao;
 
 import Invoice.product.Product;
 
+import java.sql.Array;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ProductDAO extends ConnectionDAO {
     public boolean insertProductDatabase(Product product) {
@@ -25,6 +28,25 @@ public class ProductDAO extends ConnectionDAO {
 
         return result;
     }
+
+    public ArrayList<Product> getAllProductsDatabase() {
+        ArrayList<Product> products = new ArrayList<>();
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(
+                    "select p.id, p.productName, p.productValue, p.productQuantity from products");
+
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                Product product = new Product();
+            }
+
+        } catch (SQLException err) {
+
+        }
+    }
+
 
     public boolean updateProductDatabase(int id, String newProductName, double newProductValue, int newProductQuantity) {
         boolean result;
