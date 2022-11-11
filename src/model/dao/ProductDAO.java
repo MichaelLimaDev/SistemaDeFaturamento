@@ -28,18 +28,21 @@ public class ProductDAO extends ConnectionDAO {
         return result;
     }
 
-    public ArrayList<Product> getAllProductsDatabase() {
+    public ArrayList<Product> getAllProductsDatabase(int id) {
         ArrayList<Product> products = new ArrayList<>();
 
         try {
             PreparedStatement statement = connection.prepareStatement(
-                    "select p.id, p.productName, p.productValue, p.productQuantity from products");
+                    "select p.id, p.productName, p.productValue, p.productQuantity from products where id = ?");
+
+            statement.setInt(1, id);
 
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
                 Product product = new Product();
 
+                product.setId(result.getInt("p.id"));
                 product.setProductName(result.getString("p.productName"));
                 product.setProductValue(result.getDouble("p.productValue"));
                 product.setProductQuantity(result.getInt("p.productQuantity"));

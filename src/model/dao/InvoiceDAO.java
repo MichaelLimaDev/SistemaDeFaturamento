@@ -1,6 +1,7 @@
 package model.dao;
 
 import model.entity.Invoice;
+import model.entity.Product;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +23,7 @@ public class InvoiceDAO extends ConnectionDAO {
 
                 invoice.setId(resultSet.getInt("v.id"));
                 invoice.setValorTotal(resultSet.getDouble("v.totalValue"));
-                invoice.setIdProducts(resultSet.getInt("v.id_product"));
+                invoice.setListProduct(new ProductDAO().getAllProductsDatabase(resultSet.getInt("v.id_product")));
 
                 invoices.add(invoice);
             }
