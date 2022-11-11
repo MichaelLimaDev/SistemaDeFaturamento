@@ -4,8 +4,18 @@ import java.util.ArrayList;
 
 public class Invoice {
 
+    private int id;
     private double valorTotal;
-    private ArrayList<Product> listProducts;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int idProducts;
 
     public double getValorTotal() {
         return valorTotal;
@@ -15,11 +25,11 @@ public class Invoice {
         this.valorTotal = valorTotal;
     }
 
-    public ArrayList<Product> getListProducts() {
-        return listProducts;
+    public int getIdProducts() {
+        return idProducts;
     }
 
-    public void setListProducts(ArrayList<Product> listProducts) {
-        this.listProducts = listProducts;
+    public void setIdProducts(int idProducts) {
+        this.idProducts = idProducts;
     }
 }
