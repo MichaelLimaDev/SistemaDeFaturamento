@@ -1,13 +1,19 @@
-package Invoice.product;
+package model.entity;
 
 public class Product {
-    public String productName;
-    public double productValue;
-    public int productQuantity;
+    private String productName;
+    private double productValue;
+    private int productQuantity;
 
-    public Product(String productName, double productValue, int productQuantity) {
+    public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public void setProductValue(double productValue) {
         this.productValue = productValue;
+    }
+
+    public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
     }
 

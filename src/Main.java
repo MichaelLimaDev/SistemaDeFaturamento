@@ -1,5 +1,5 @@
-import Invoice.Invoice;
-import Invoice.product.Product;
+import model.entity.Invoice;
+import model.entity.Product;
 
 public class Main {
     public static void main(String[] args) {

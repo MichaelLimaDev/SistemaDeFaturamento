@@ -1,6 +1,4 @@
-package Invoice;
-
-import Invoice.product.Product;
+package model.entity;
 
 import java.util.ArrayList;
 

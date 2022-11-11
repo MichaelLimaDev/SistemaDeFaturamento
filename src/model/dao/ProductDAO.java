@@ -1,8 +1,7 @@
 package model.dao;
 
-import Invoice.product.Product;
+import model.entity.Product;
 
-import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,11 +39,20 @@ public class ProductDAO extends ConnectionDAO {
 
             while (result.next()) {
                 Product product = new Product();
+
+                product.setProductName(result.getString("p.productName"));
+                product.setProductValue(result.getDouble("p.productValue"));
+                product.setProductQuantity(result.getInt("p.productQuantity"));
+
+                products.add(product);
             }
 
         } catch (SQLException err) {
-
+            err.printStackTrace();
+            System.out.println("Erro de listagem");
         }
+
+        return products;
     }
 
 
