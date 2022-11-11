@@ -5,18 +5,21 @@ import java.util.ArrayList;
 public class Invoice {
 
     private double valorTotal;
-    private final ArrayList<Product> listProducts = new ArrayList<>();
-
-    public void addProducts(String productName, double productValue, int productQuantity) {
-        this.listProducts.add(new Product(productName, productValue, productQuantity));
-    }
+    private ArrayList<Product> listProducts;
 
     public double getValorTotal() {
-        return this.valorTotal;
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     public ArrayList<Product> getListProducts() {
-        return this.listProducts;
+        return listProducts;
     }
 
+    public void setListProducts(ArrayList<Product> listProducts) {
+        this.listProducts = listProducts;
+    }
 }

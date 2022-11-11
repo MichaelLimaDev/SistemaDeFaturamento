@@ -1,4 +1,3 @@
 package model.dao;
 
-public class InvoiceDAO extends ConnectionDAO {
-}
+public class InvoiceDAO extends ConnectionDAO {}
