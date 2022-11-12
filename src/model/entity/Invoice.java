@@ -6,7 +6,7 @@ public class Invoice {
 
     private int id;
     private double valorTotal;
-    private ArrayList<Product> listProduct;
+    private Product product;
 
     public int getId() {
         return id;
@@ -24,12 +24,11 @@ public class Invoice {
         this.valorTotal = valorTotal;
     }
 
-    public ArrayList<Product> getListProduct() {
-        return listProduct;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setListProduct(ArrayList<Product> listProduct) {
-        this.listProduct = listProduct;
+    public void setProduct(Product product) {
+        this.product = product;
     }
-
 }

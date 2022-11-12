@@ -1,5 +1,6 @@
-package model.dao;
+package model.dao.ProductDAO;
 
+import model.dao.ConnectionDAO;
 import model.entity.Product;
 
 import java.sql.PreparedStatement;

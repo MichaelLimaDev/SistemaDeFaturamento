@@ -1,14 +1,14 @@
-package model.dao;
+package model.dao.InvoiceDAO.functions;
 
+import model.dao.ConnectionDAO;
 import model.entity.Invoice;
-import model.entity.Product;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class InvoiceDAO extends ConnectionDAO {
+public class GetAllInvoicesDadabase extends ConnectionDAO {
     public ArrayList<Invoice> getAllInvoicesDatabase() {
         ArrayList<Invoice> invoices = new ArrayList<>();
 
@@ -23,7 +23,7 @@ public class InvoiceDAO extends ConnectionDAO {
 
                 invoice.setId(resultSet.getInt("v.id"));
                 invoice.setValorTotal(resultSet.getDouble("v.totalValue"));
-                invoice.setListProduct(new ProductDAO().getAllProductsDatabase());
+                // !adicionar produtos
 
                 invoices.add(invoice);
             }

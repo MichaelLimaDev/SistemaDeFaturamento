@@ -1,6 +1,6 @@
 package view;
 
-import model.dao.ProductDAO;
+import model.dao.ProductDAO.ProductDAO;
 import model.entity.Product;
 
 public class Terminal {
