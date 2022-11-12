@@ -8,13 +8,13 @@ public abstract class ConnectionDAO {
 
     protected Connection connection;
 
-    final static String URL = "jdbc:mysql://localhost:SistemaDeFaturamento";
+    final static String URL = "jdbc:mysql://localhost/sistemadefaturamento";
     final static String USER = "root";
     final static String PASSWORD = "M1ch4elux2";
 
     public ConnectionDAO() {
         try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException err) {
             err.printStackTrace();
         }
@@ -22,7 +22,7 @@ public abstract class ConnectionDAO {
 
     public void closeConnection() {
         try {
-            connection.close();
+            this.connection.close();
         } catch (SQLException err) {
             err.printStackTrace();
         }

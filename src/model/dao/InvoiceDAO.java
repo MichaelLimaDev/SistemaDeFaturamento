@@ -23,7 +23,7 @@ public class InvoiceDAO extends ConnectionDAO {
 
                 invoice.setId(resultSet.getInt("v.id"));
                 invoice.setValorTotal(resultSet.getDouble("v.totalValue"));
-                invoice.setListProduct(new ProductDAO().getAllProductsDatabase(resultSet.getInt("v.id_product")));
+                invoice.setListProduct(new ProductDAO().getAllProductsDatabase());
 
                 invoices.add(invoice);
             }
