@@ -1,5 +1,6 @@
 package model.dao.ProductDAO.functions;
 
+import model.dao.CRUD;
 import model.dao.ConnectionDAO;
 import model.entity.Product;
 
@@ -9,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class GetAllProductsDatabase extends ConnectionDAO {
-    public ArrayList<Product> getAllProductsDatabase() {
+    public ArrayList<Product> getAllDatabase() {
         ArrayList<Product> products = new ArrayList<>();
 
         try {
