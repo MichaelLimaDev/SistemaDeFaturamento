@@ -1,7 +1,6 @@
 package model.dao.InvoiceDAO.functions;
 
 import model.dao.ConnectionDAO;
-import model.dao.ProductDAO.ProductDAO;
 import model.entity.Product;
 
 import java.sql.PreparedStatement;

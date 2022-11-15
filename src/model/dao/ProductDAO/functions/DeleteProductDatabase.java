@@ -1,12 +1,15 @@
 package model.dao.ProductDAO.functions;
 
 import model.dao.ConnectionDAO;
+import model.dao.interfaces.crud.DeleteOneDataOfDatabase;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DeleteProductDatabase extends ConnectionDAO {
-    public boolean deleteProductDatabase(int idProduct) {
+public class DeleteProductDatabase extends ConnectionDAO implements DeleteOneDataOfDatabase {
+
+    @Override
+    public boolean deleteDatabase(int idProduct) {
         boolean result;
 
         try {
