@@ -6,7 +6,7 @@ public class Invoice {
 
     private int id;
     private double valorTotal;
-    private Product product;
+    private int product_id;
 
     public int getId() {
         return id;
@@ -24,11 +24,11 @@ public class Invoice {
         this.valorTotal = valorTotal;
     }
 
-    public Product getProduct() {
-        return product;
+    public int getProduct() {
+        return product_id;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProduct(int product_id) {
+        this.product_id = product_id;
     }
 }

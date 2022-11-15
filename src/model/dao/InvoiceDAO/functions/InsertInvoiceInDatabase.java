@@ -1,6 +1,7 @@
 package model.dao.InvoiceDAO.functions;
 
 import model.dao.ConnectionDAO;
+import model.dao.ProductDAO.functions.GetAllProductsDatabase;
 import model.entity.Product;
 
 import java.sql.PreparedStatement;
@@ -12,9 +13,8 @@ public class InsertInvoiceInDatabase extends ConnectionDAO {
         boolean result;
         // Refatorar essa função
         double totalValue = 0;
-        ProductDAO productDAO = new ProductDAO();
 
-        for (Product productss: productDAO.getAllProductsDatabase()) {
+        for (Product productss: new GetAllProductsDatabase().getAllDatabase()) {
             totalValue += productss.getProductValue();
         }
 
