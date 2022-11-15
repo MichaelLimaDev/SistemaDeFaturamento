@@ -1,7 +1,6 @@
 package model.dao.InvoiceDAO.functions;
 
 import model.dao.ConnectionDAO;
-import model.dao.ProductDAO.functions.GetAllProductsDatabase;
 import model.entity.Invoice;
 import model.entity.Product;
 
@@ -10,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class GetAllInvoicesDadabase extends ConnectionDAO {
+public class GetAllInvoicesDatabase extends ConnectionDAO {
     public ArrayList<Invoice> getAllInvoicesDatabase() {
         Product product = new Product();
         ArrayList<Invoice> invoices = new ArrayList<>();
