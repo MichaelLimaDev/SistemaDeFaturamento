@@ -10,7 +10,7 @@ public abstract class ConnectionDAO {
 
     final static String URL = "jdbc:mysql://localhost/sistemadefaturamento";
     final static String USER = "root";
-    final static String PASSWORD = "M1ch4elux2";
+    final static String PASSWORD = "Micha123456";
 
     public ConnectionDAO() {
         try {

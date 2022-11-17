@@ -23,6 +23,7 @@ public class GetAllInvoicesDatabase extends ConnectionDAO {
             while(resultSet.next()) {
                 Invoice invoice = new Invoice();
 
+
                 invoice.setId(resultSet.getInt("id"));
                 invoice.setValorTotal(resultSet.getDouble("totalValue"));
                 invoice.setProduct(resultSet.getInt(product.getId()));
