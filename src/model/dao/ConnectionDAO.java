@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class ConnectionDAO {
+    protected Connection connection;
     private String status = "Banco nao conectado";
 
     private final static String URL = "jdbc:mysql://localhost/sistemadefaturamento";
@@ -12,10 +13,8 @@ public abstract class ConnectionDAO {
     private final static String PASSWORD = "Micha123456";
 
     public ConnectionDAO() {
-        Connection connection = null;
-
         try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
             this.status = "STATUS --> Banco de dados conectado com sucesso";
         } catch (SQLException err) {
             err.printStackTrace();

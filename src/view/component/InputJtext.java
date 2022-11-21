@@ -1,3 +1,4 @@
+package view.component;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
