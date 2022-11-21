@@ -5,26 +5,36 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class ConnectionDAO {
+    private String status = "Banco nao conectado";
 
-    protected Connection connection;
-
-    final static String URL = "jdbc:mysql://localhost/sistemadefaturamento";
-    final static String USER = "root";
-    final static String PASSWORD = "Micha123456";
+    private final static String URL = "jdbc:mysql://localhost/sistemadefaturamento";
+    private final static String USER = "root";
+    private final static String PASSWORD = "Micha123456";
 
     public ConnectionDAO() {
+        Connection connection = null;
+
         try {
-            this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            this.status = "STATUS --> Banco de dados conectado com sucesso";
         } catch (SQLException err) {
             err.printStackTrace();
+            this.status = "STATUS --> Erro ao conectar com o banco...";
         }
     }
 
     public void closeConnection() {
         try {
             this.connection.close();
+            this.status = "STATUS --> Conexão fechada";
         } catch (SQLException err) {
             err.printStackTrace();
+            this.status = "STATUS --> Erro ao fechar a conexão - Tentando novamente";
+            closeConnection();
         }
+    }
+
+    public String getStatus() {
+        return this.status;
     }
 }
