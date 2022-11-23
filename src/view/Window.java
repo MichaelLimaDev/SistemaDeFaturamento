@@ -3,10 +3,11 @@ package view;
 import view.component.Panel;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Window extends JFrame {
 
-    private static JTextField tfild;
+    private static JButton button;
 
     public static void Window() {
         JFrame window = new JFrame("Window test");
@@ -17,8 +18,10 @@ public class Window extends JFrame {
 
         Panel panel = new Panel();
 
-        tfild = new JTextField(10);
-        panel.add(tfild);
+        button = new JButton("Botão test");
+        button.setBackground(Color.green);
+        button.setSize(200, 75);
+        panel.add(button);
 
         window.add(panel);
         window.setVisible(true);
