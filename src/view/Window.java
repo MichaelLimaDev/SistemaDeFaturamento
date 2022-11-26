@@ -1,5 +1,6 @@
 package view;
 
+import view.component.Form;
 import view.component.Panel;
 
 import javax.swing.*;
@@ -26,11 +27,8 @@ public class Window extends JFrame {
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        JFrame modal = new JFrame();
-                        modal.setSize(300, 500);
-                        modal.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                        modal.setResizable(false);
-                        modal.setVisible(true);
+                        Form form = new Form();
+                        form.createFormWindow();
                     }
                 }
         );
