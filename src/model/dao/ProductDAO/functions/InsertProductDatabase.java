@@ -11,9 +11,14 @@ public class InsertProductDatabase extends ConnectionDAO implements InsertDataIn
 
     private Product product;
 
+    public InsertProductDatabase(Product product) {
+        this.product = product;
+    }
+
     @Override
     public boolean insertDatabase() {
         boolean result;
+
         try {
             PreparedStatement statement = connection.prepareStatement(
                     "insert into product(productName, productValue, productQuantity) values (?, ?, ?)");
